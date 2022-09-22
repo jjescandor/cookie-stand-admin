@@ -1,12 +1,17 @@
-
+import Link from "next/link";
 
 import styles from '../styles/Home.module.css'
 
 export default function Header() {
 
     return (
-        <header className='bg-emerald-600 h-10  flex flex-col content-center'>
-            <h1 className="my-auto text-2xl m-5">Cookie Stand Admin</h1>
+        <header className='bg-emerald-600 h-20  flex flex-row content-center justify-between'>
+            <h1 className="my-auto text-3xl m-5">Cookie Stand Admin</h1>
+            <div className='flex justify-evenly w-1/6 items-center text-xl'>
+                <h1><Link href="./home">Home</Link></h1>
+                <h1>|</h1>
+                <h1><Link href="./admin">Admin</Link></h1>
+            </div>
         </header>
     )
 }
