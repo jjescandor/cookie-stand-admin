@@ -4,9 +4,10 @@ import styles from '../styles/Home.module.css'
 export default function From(props) {
     return (
         <form onSubmit={props.getBaseline} className='flex flex-col items-center bg-emerald-300 w-2/3 mx-auto my-10'>
-            <div className='w-full p-5'>
+            <h1 className="m-4 text-2xl">Create A Cookie Stand</h1>
+            <div className='w-full p-2'>
                 <label>Location</label>
-                <input name="loc" className='bg-sky-100 w-5/6 m-5' />
+                <input name="loc" className='bg-sky-100 w-5/6 m-2' />
             </div>
             <div className="flex flex-row items-center">
                 <div className='flex flex-col p-10'>
