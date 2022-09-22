@@ -6,7 +6,9 @@ export default function Home() {
     const imgs = [
         "/data/img1.png",
         "/data/img2.png",
-        "/data/img3.png"
+        "/data/img3.png",
+        "/data/img4.png",
+        "/data/img5.png"
     ]
 
     return (

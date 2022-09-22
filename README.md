@@ -23,5 +23,11 @@ related names.
 - Won’t break if they get left in, but a good practice to remove stuff you’re not using.
 - Pro tip: Tailwind CSS Extension Pack
 
+### Stretch Goals
+- Refactor to move components to own functions.
+- Refactor to move components to own files.
+- Add more styling
+- Link to another page within the app
+
 ### Tests
 1. No test at this time
