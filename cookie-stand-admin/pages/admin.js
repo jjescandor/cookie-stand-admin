@@ -1,4 +1,3 @@
-import styles from '../styles/Home.module.css'
 import Form from "./form"
 import Header from "./header";
 import Footer from "./footer";
