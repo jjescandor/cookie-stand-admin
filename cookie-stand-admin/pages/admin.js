@@ -14,7 +14,7 @@ export default function Admin() {
             "maxCustomers": e.target.max.value,
             "avgCookies": e.target.avg.value
         }
-        getInput(JSON.stringify(dataArr))
+        getInput(JSON.stringify(data))
     }
 
     return (
