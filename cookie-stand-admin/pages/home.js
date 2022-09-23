@@ -17,7 +17,12 @@ export default function Home() {
             <h1 className="m-auto">Future products goes here</h1>
             <div className="flex flex-row justify-around items-center h-5/6 m-auto w-screen">
                 {imgs.map((img, idx) =>
-                    (< Image src={img} key={idx} alt={idx} width={250} height={320} />)
+
+                (
+                    <div className="rounded drop-shadow-2xl">
+                        < Image src={img} key={idx} alt={idx} width={250} height={320} className="rounded-md" />
+                    </div>
+                )
                 )}
             </div>
             <Footer />
