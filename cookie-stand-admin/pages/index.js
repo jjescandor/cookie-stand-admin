@@ -1,9 +1,9 @@
 import styles from '../styles/Home.module.css';
-import Admin from "./admin";
+import CookieStandAdmin from "./cookiestandadmin";
 
 export default function Index() {
 
   return (
-    <Admin />
+    <CookieStandAdmin />
   )
 }

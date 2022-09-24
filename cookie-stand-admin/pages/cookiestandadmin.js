@@ -1,10 +1,10 @@
-import Form from "./form"
 import Header from "./header";
+import CreateForm from "./createform";
+import ReporTable from "./reportable";
 import Footer from "./footer";
-import ReporTable from "./reportable"
 import { useState } from 'react';
 
-export default function Admin() {
+export default function CookieStandAdmin() {
     const [input, setInput] = useState([]);
     const getSales = (max, min, avg) => {
         const salesArr = []
@@ -36,7 +36,7 @@ export default function Admin() {
         <div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
             <Header />
             <main className='flex flex-col items-center h-5/6'>
-                <Form handleSubmit={handleSubmit} />
+                <CreateForm handleSubmit={handleSubmit} />
                 <div className='flex flex-col items-center my-10'>
                     {newD()?.length <= 0 &&
                         <h1 className="text-2xl">
