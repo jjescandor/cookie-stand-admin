@@ -35,7 +35,6 @@ export default function ReporTable(props) {
                                 <td className={`${tdStyles}`} >{item.location}</td>
                                 {
                                     item.sales.map((item, idx) => {
-                                        { console.log(item) }
                                         return (<td key={idx} className={`${tdStyles}`}>{item}</td>)
                                     })
                                 }

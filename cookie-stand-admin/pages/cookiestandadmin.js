@@ -2,18 +2,23 @@ import Header from "./header";
 import CreateForm from "./createform";
 import ReporTable from "./reportable";
 import Footer from "./footer";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function CookieStandAdmin() {
     const [input, setInput] = useState([]);
+    useEffect(() => {
+        const item = JSON.parse(localStorage.getItem('cookie')) || [];
+        console.log("Hi", item)
+        setInput([...item])
+    }, []);
+
     const getSales = (max, min, avg) => {
         const salesArr = []
         for (let i = 0; i < 14; i++) {
             let cookiesPerHour = Math.ceil(Math.floor(Math.random() * (max - min + 1 + min) * avg));
-            console.log(cookiesPerHour)
+
             salesArr.push(cookiesPerHour);
         }
-        console.log(salesArr)
         return salesArr
     }
     const handleSubmit = (e) => {
@@ -25,7 +30,10 @@ export default function CookieStandAdmin() {
             avgCookies: e.target.avg.value,
             sales: getSales(e.target.max.value, e.target.min.value, e.target.avg.value) || []
         }
-        setInput([...input, data])
+        const newData = [...input, data]
+        let stringfyedValue = JSON.stringify(newData)
+        localStorage.setItem('cookie', stringfyedValue);
+        setInput(newData)
 
     }
     function newD() {
