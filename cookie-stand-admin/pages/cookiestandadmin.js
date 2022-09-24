@@ -8,7 +8,6 @@ export default function CookieStandAdmin() {
     const [input, setInput] = useState([]);
     useEffect(() => {
         const item = JSON.parse(localStorage.getItem('cookie')) || [];
-        console.log("Hi", item)
         setInput([...item])
     }, []);
 
@@ -16,7 +15,6 @@ export default function CookieStandAdmin() {
         const salesArr = []
         for (let i = 0; i < 14; i++) {
             let cookiesPerHour = Math.ceil(Math.floor(Math.random() * (max - min + 1 + min) * avg));
-
             salesArr.push(cookiesPerHour);
         }
         return salesArr
@@ -36,8 +34,14 @@ export default function CookieStandAdmin() {
         setInput(newData)
 
     }
-    function newD() {
+    const newData = () => {
         return input
+    }
+
+    const clearData = () => {
+        localStorage.clear()
+        const item = JSON.parse(localStorage.getItem('cookie')) || [];
+        setInput([...item])
     }
 
     return (
@@ -46,15 +50,17 @@ export default function CookieStandAdmin() {
             <main className='flex flex-col items-center h-5/6'>
                 <CreateForm handleSubmit={handleSubmit} />
                 <div className='flex flex-col items-center my-10'>
-                    {newD()?.length <= 0 &&
+                    {newData()?.length <= 0 &&
                         <h1 className="text-2xl">
                             No Cookie Stands Available
                         </h1>
                     }
-                    {newD()?.length > 0 &&
-                        <ReporTable newD={newD} />
+                    {newData()?.length > 0 &&
+                        <ReporTable newData={newData} />
                     }
                 </div>
+                {newData()?.length > 0 &&
+                    <button onClick={clearData} className='p-4 bg-emerald-700 rounded-md shadow-lg hover:bg-red-200'>clear table</button>}
             </main>
             <Footer input={input} />
         </div>
