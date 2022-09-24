@@ -2,7 +2,7 @@ import styles from '../styles/Home.module.css'
 
 export default function From(props) {
     return (
-        <form onSubmit={props.getBaseline} className='flex flex-col items-center bg-emerald-300 w-2/3 mx-auto my-10 rounded drop-shadow-md'>
+        <form onSubmit={props.handleSubmit} className='flex flex-col items-center bg-emerald-300 w-2/3 mx-auto my-10 rounded drop-shadow-md'>
             <h1 className="m-4 text-2xl">Create A Cookie Stand</h1>
             <div className='flex flex-grow items-center justify-evenly w-full p-2'>
                 <label>Location</label>
