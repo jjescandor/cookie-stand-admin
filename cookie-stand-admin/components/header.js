@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import styles from '../styles/Home.module.css'
 
-export default function Header() {
+export const Header = () => {
 
     return (
         <header className='bg-emerald-600 h-20  flex flex-row content-center justify-between'>
@@ -15,4 +15,3 @@ export default function Header() {
         </header>
     )
 }
-

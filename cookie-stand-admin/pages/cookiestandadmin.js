@@ -1,11 +1,11 @@
-import Header from "../components/header";
-import CreateForm from "../components/createform";
-import ReporTable from "../components/reportable";
-import Footer from "../components/footer";
+import { Header } from "../components/header";
+import { CreateForm } from "../components/createform";
+import { ReporTable } from "../components/reportable";
+import { Footer } from "../components/footer";
 import Head from "next/head";
 import { useEffect, useState } from 'react';
 
-export default function CookieStandAdmin() {
+const CookieStandAdmin = () => {
     const [input, setInput] = useState([]);
     useEffect(() => {
         const item = JSON.parse(localStorage.getItem('cookie')) || [];
@@ -83,4 +83,5 @@ export default function CookieStandAdmin() {
     )
 }
 
+export default CookieStandAdmin
 

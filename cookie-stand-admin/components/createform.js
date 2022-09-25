@@ -1,6 +1,4 @@
-import styles from '../styles/Home.module.css'
-
-export default function CreateForm(props) {
+export const CreateForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className='flex flex-col items-center bg-emerald-300 w-2/3 mx-auto my-10 rounded drop-shadow-md'>
             <h1 className="m-4 text-2xl">Create A Cookie Stand</h1>
@@ -29,6 +27,7 @@ export default function CreateForm(props) {
         </form>
     )
 }
+
 
 
 

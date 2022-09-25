@@ -4,7 +4,7 @@ const thStyles = "my-10  mx-auto p-3 bg-emerald-500 text-gray-700"
 const tfStyles = "my-10  mx-auto p-3 bg-emerald-500 text-red-300"
 const totalStyles = "my-10  mx-auto p-3 text-center bg-emerald-700 text-white"
 
-export default function ReporTable(props) {
+export const ReporTable = (props) => {
     const hours = ["Remove", "Location", "6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "Totals"]
     const findTotals = (salesData) => {
         const hourlyTotal = []

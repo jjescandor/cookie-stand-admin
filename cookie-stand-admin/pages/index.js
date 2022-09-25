@@ -1,7 +1,7 @@
 import styles from '../styles/Home.module.css';
 import CookieStandAdmin from "./cookiestandadmin";
 
-export default function Index() {
+export const Index = () => {
 
   return (
     <>
@@ -9,3 +9,5 @@ export default function Index() {
     </>
   )
 }
+
+export default Index; 

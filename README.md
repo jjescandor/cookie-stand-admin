@@ -25,5 +25,13 @@ ReportTable details…
 IMPORTANT Complete version 1 tasks before moving to version 2 features.
 - Pro tip: Tailwind CSS Extension Pack
 
+### Stretch Goals
+- Flesh out Overview page to do more
+- Remove hard coding from <CreateForm> and properly calculate hourly sales per cookie stand.
+- Add delete icons.
+- Pro Tip: Heroicons
+- Really stretch out and make delete icons functional.
+- Persist Cookie Stand data.
+
 ### Tests
 1. No test at this time

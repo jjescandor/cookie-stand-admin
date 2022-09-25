@@ -1,9 +1,9 @@
-import Header from "../components/header";
-import Footer from "../components/footer";
+import { Header } from "../components/header";
+import { Footer } from "../components/footer";
 import Image from 'next/image'
 import Head from "next/head";
 
-export default function Home() {
+const Home = () => {
     const imgs = [
         "/data/img1.png",
         "/data/img2.png",
@@ -33,3 +33,5 @@ export default function Home() {
         </div>
     )
 }
+
+export default Home

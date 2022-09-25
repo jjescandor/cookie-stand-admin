@@ -1,7 +1,7 @@
 
 import styles from '../styles/Home.module.css'
 
-export default function Footer(props) {
+export const Footer = (props) => {
     return (
         <footer className=" flex content-center bg-emerald-600 h-20 my-auto flex flex-col content-center ">
             <div className="flex h-full">
