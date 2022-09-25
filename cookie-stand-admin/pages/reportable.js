@@ -2,6 +2,7 @@ import styles from '../styles/Home.module.css';
 const tdStyles = "my-10  mx-auto p-3 bg-emerald-400 text-gray-500"
 const thStyles = "my-10  mx-auto p-3 bg-emerald-500 text-gray-700"
 const tfStyles = "my-10  mx-auto p-3 bg-emerald-500 text-red-300"
+const totalStyles = "my-10  mx-auto p-3 bg-emerald-500 text-white"
 
 export default function ReporTable(props) {
     const hours = ["Location", "6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "Totals"]
@@ -45,7 +46,7 @@ export default function ReporTable(props) {
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td className={`${tfStyles}`}>Totals</td>
+                        <td className={`${totalStyles}`}>Totals</td>
                         {findTotals(props.input).map((item, idx) => <td className={`${tfStyles}`} key={idx}>{item}</td>)}
                         <td className={`${tfStyles}`}>{findTotals(props.input).reduce((item1, item2) => item1 + item2, 0)}</td>
                     </tr>
