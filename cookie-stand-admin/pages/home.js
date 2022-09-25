@@ -1,6 +1,7 @@
-import Header from "./header";
-import Footer from "./footer";
+import Header from "../components/header";
+import Footer from "../components/footer";
 import Image from 'next/image'
+import Head from "next/head";
 
 export default function Home() {
     const imgs = [
@@ -13,6 +14,9 @@ export default function Home() {
 
     return (
         <div className="m-auto text-2xl flex flex-col h-screen bg-emerald-50 text-black">
+            <Head>
+                <title>Cookie Stand Home</title>
+            </Head>
             <Header />
             <h1 className="m-auto">Future products goes here</h1>
             <div className="flex flex-row justify-around items-center h-5/6 m-auto w-screen">

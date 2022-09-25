@@ -1,7 +1,8 @@
-import Header from "./header";
-import CreateForm from "./createform";
-import ReporTable from "./reportable";
-import Footer from "./footer";
+import Header from "../components/header";
+import CreateForm from "../components/createform";
+import ReporTable from "../components/reportable";
+import Footer from "../components/footer";
+import Head from "next/head";
 import { useEffect, useState } from 'react';
 
 export default function CookieStandAdmin() {
@@ -54,6 +55,9 @@ export default function CookieStandAdmin() {
 
     return (
         <div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
+            <Head>
+                <title>Cookie Stand Admin</title>
+            </Head>
             <Header />
             <main className='flex flex-col items-center h-5/6'>
                 <CreateForm handleSubmit={handleSubmit} />
