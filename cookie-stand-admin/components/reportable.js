@@ -21,8 +21,8 @@ export const ReporTable = (props) => {
     }
 
     return (
-        <div className='rounded shadow-xl'>
-            <table>
+        <div className='rounded shadow-xl z-0'>
+            <table className='z-0'>
                 <thead>
                     <tr>
                         {hours?.map((item, idx) => <th className={`${thStyles}`} key={idx}>{item}</th>)}

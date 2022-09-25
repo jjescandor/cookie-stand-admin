@@ -59,7 +59,7 @@ const CookieStandAdmin = () => {
                 <title>Cookie Stand Admin</title>
             </Head>
             <Header />
-            <main className='flex flex-col items-center h-5/6'>
+            <main className='flex flex-col items-center h-5/6 z-40'>
                 <CreateForm handleSubmit={handleSubmit} />
                 <OverviewModal modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} input={input} />
                 <div className='flex flex-col items-center my-10'>
