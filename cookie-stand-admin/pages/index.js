@@ -4,6 +4,8 @@ import CookieStandAdmin from "./cookiestandadmin";
 export default function Index() {
 
   return (
-    <CookieStandAdmin />
+    <>
+      <CookieStandAdmin />
+    </>
   )
 }
