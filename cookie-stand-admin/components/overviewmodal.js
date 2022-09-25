@@ -126,6 +126,19 @@ const OverviewModal = (props) => {
                 text: `Average Sales Across ${numLoc} Cookie Stores`,
             },
         },
+        scales: {
+            x: {
+                ticks: {
+                    beginAtZero: false
+                }
+            },
+            y: {
+                ticks: {
+                    autoSkip: false,
+                    beginAtZero: false,
+                }
+            }
+        }
     };
 
     return (
@@ -133,13 +146,13 @@ const OverviewModal = (props) => {
             isOpen={props.modalIsOpen}
             style={customStyles}
             ariaHideApp={false}>
-            <h1 className='text-white text-2xl'>Cookie Stands Sales Summary</h1>
-            <h1 className='my-3'>Number of Locations: {numLoc}</h1>
-            <h1 className='my-3'>Best Performing Store: {bestStoreSales}</h1>
-            <h1 className='my-3'>Best Performing Hour: {bestHourSales}</h1>
-            <h1 className='my-3'>Worst Performing Store: {worstStoreSales}</h1>
-            <h1 className='my-3'>Worst Performing Hour: {worstHourSales}</h1>
-            <h1 className='my-3'>Total sales: {totalSales}</h1>
+            <h1 className='text-gray-600 text-2xl'>Cookie Stands Sales Summary</h1>
+            <h1 className='my-3 flex'>Number of Locations: <h1 className='mx-2 text-red-600'>{numLoc}</h1> </h1>
+            <h1 className='my-3 flex'>Best Performing Store: <h1 className='mx-2 text-red-600'>{bestStoreSales}</h1></h1>
+            <h1 className='my-3 flex'>Best Performing Hour: <h1 className='mx-2 text-red-600'>{bestHourSales}</h1></h1>
+            <h1 className='my-3 flex'>Worst Performing Store: <h1 className='mx-2 text-red-600'>{worstStoreSales}</h1></h1>
+            <h1 className='my-3 flex'>Worst Performing Hour: <h1 className='mx-2 text-red-600'>{worstHourSales}</h1></h1>
+            <h1 className='my-3 flex'>Total sales: <h1 className='mx-2 text-red-600'>{totalSales}</h1></h1>
             <LineChart data={data} options={options} />
             <button onClick={() => {
                 props.setIsModalOpen(false)
