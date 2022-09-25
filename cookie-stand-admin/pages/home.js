@@ -19,8 +19,8 @@ export default function Home() {
                 {imgs.map((img, idx) =>
 
                 (
-                    <div className="rounded drop-shadow-2xl">
-                        < Image src={img} key={idx} alt={idx} width={250} height={320} className="rounded-md" />
+                    <div className="rounded drop-shadow-2xl" key={idx}>
+                        < Image src={img} alt={idx} width={250} height={320} className="rounded-md" />
                     </div>
                 )
                 )}

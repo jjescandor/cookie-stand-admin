@@ -1,8 +1,8 @@
 import styles from '../styles/Home.module.css'
 
-export default function From(props) {
+export default function CreateForm(props) {
     return (
-        <form onSubmit={props.getBaseline} className='flex flex-col items-center bg-emerald-300 w-2/3 mx-auto my-10 rounded drop-shadow-md'>
+        <form onSubmit={props.handleSubmit} className='flex flex-col items-center bg-emerald-300 w-2/3 mx-auto my-10 rounded drop-shadow-md'>
             <h1 className="m-4 text-2xl">Create A Cookie Stand</h1>
             <div className='flex flex-grow items-center justify-evenly w-full p-2'>
                 <label>Location</label>
@@ -21,7 +21,10 @@ export default function From(props) {
                     <label>Average Cookie per Sale</label>
                     <input type="number" name="avg" className='bg-white w-5/6 rounded' required />
                 </div>
-                <button className='bg-emerald-600 flex-grow h-10 w-1/6 m-3 shadow-md rounded-md hover:bg-red-200'>Create</button>
+                <button className='flex flex-row bg-emerald-600 flex-grow h-10 m-3 shadow-md rounded-md hover:bg-red-200'> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="my-auto mx-3 w-6 h-6">
+                    <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z" clipRule="evenodd" />
+                </svg>
+                    <h6 className='mx-auto my-auto'>Create</h6></button>
             </div>
         </form>
     )

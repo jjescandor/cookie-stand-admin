@@ -10,7 +10,7 @@ export default function Header() {
             <div className='flex justify-evenly w-1/6 items-center text-xl'>
                 <h1 className="hover:text-red-300"><Link href="./home">Home</Link></h1>
                 <h1>|</h1>
-                <h1 className="hover:text-red-300"><Link href="./admin">Admin</Link></h1>
+                <h1 className="hover:text-red-300"><Link href="./">Admin</Link></h1>
             </div>
         </header>
     )
