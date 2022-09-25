@@ -34,7 +34,6 @@ export const ReporTable = (props) => {
                             <tr key={idx} className={`${tdStyles}`}>
                                 <td className='flex items-center content-center'>
                                     <button onClick={(() => {
-                                        console.log("index", idx)
                                         props.removeLoc(idx)
                                     }
                                     )} className='hover:text-red-200 mx-auto my-3'>

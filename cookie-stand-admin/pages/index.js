@@ -4,9 +4,7 @@ import CookieStandAdmin from "./cookiestandadmin";
 export const Index = () => {
 
   return (
-    <>
-      <CookieStandAdmin />
-    </>
+    <CookieStandAdmin />
   )
 }
 
