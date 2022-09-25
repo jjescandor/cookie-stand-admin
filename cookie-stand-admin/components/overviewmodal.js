@@ -1,4 +1,5 @@
 import Modal from 'react-modal';
+import { LineChart } from './linechart';
 
 
 const customStyles = {
@@ -15,7 +16,7 @@ const customStyles = {
 
 
 const OverviewModal = (props) => {
-    const hours = ["Remove", "Location", "6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "Totals"]
+    const labels = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"]
 
     const findHourlyTotals = (salesData) => {
         const hourlyTotal = []
@@ -69,15 +70,23 @@ const OverviewModal = (props) => {
         const storeSales = findHourlyTotals(salesData);
         const max = Math.max(...storeSales);
         const idx = storeSales.indexOf(max);
-        return hours[idx + 2];
+        return labels[idx];
     }
 
     const findworstHour = (salesData) => {
         const storeSales = findHourlyTotals(salesData);
         const max = Math.min(...storeSales);
         const idx = storeSales.indexOf(max);
-        return hours[idx + 2];
+        return labels[idx];
 
+    }
+
+    const findAverageSales = (salesData) => {
+        const hourlySales = findHourlyTotals(salesData);
+        for (let i = 0; i < hourlySales.length; i++) {
+            hourlySales[i] = Math.floor(hourlySales[i] / numLoc);
+        }
+        return hourlySales
     }
 
     const numLoc = props.input.length;
@@ -92,6 +101,33 @@ const OverviewModal = (props) => {
 
     const worstHourSales = findworstHour(props.input);
 
+    const AvgSales = findAverageSales(props.input);
+
+    const data = {
+        labels,
+        datasets: [
+            {
+                label: 'Avg. Hourly Sales',
+                data: AvgSales,
+                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            }
+        ],
+    };
+
+    const options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top'
+            },
+            title: {
+                display: true,
+                text: `Average Sales Across ${numLoc} Cookie Stores`,
+            },
+        },
+    };
+
     return (
         <Modal
             isOpen={props.modalIsOpen}
@@ -104,6 +140,7 @@ const OverviewModal = (props) => {
             <h1 className='my-3'>Worst Performing Store: {worstStoreSales}</h1>
             <h1 className='my-3'>Worst Performing Hour: {worstHourSales}</h1>
             <h1 className='my-3'>Total sales: {totalSales}</h1>
+            <LineChart data={data} options={options} />
             <button onClick={() => {
                 props.setIsModalOpen(false)
             }}
