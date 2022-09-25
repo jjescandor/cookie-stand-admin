@@ -8,14 +8,13 @@ export default function ReporTable(props) {
     const hours = ["Location", "6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "Totals"]
     const findTotals = (salesData) => {
         const hourlyTotal = []
-        for (let i = 0; i < salesData[0].sales.length; i++) {
-            hourlyTotal.push(0)
-        }
         for (let j = 0; j < salesData.length; j++) {
-            let sum = 0
             for (let k = 0; k < salesData[j].sales.length; k++) {
-                sum = salesData[j].sales[k]
-                hourlyTotal[k] += sum
+                if (!hourlyTotal[k]) {
+                    hourlyTotal[k] = salesData[j].sales[k];
+                } else {
+                    hourlyTotal[k] += salesData[j].sales[k];
+                }
             }
         }
         return hourlyTotal
