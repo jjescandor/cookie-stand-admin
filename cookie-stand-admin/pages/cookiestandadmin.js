@@ -34,9 +34,6 @@ export default function CookieStandAdmin() {
         setInput(newData)
 
     }
-    const newData = () => {
-        return input
-    }
 
     const clearData = () => {
         localStorage.clear()
@@ -50,16 +47,16 @@ export default function CookieStandAdmin() {
             <main className='flex flex-col items-center h-5/6'>
                 <CreateForm handleSubmit={handleSubmit} />
                 <div className='flex flex-col items-center my-10'>
-                    {newData()?.length <= 0 &&
+                    {input?.length <= 0 &&
                         <h1 className="text-2xl">
                             No Cookie Stands Available
                         </h1>
                     }
-                    {newData()?.length > 0 &&
-                        <ReporTable newData={newData} />
+                    {input.length > 0 &&
+                        <ReporTable input={input} />
                     }
                 </div>
-                {newData()?.length > 0 &&
+                {input?.length > 0 &&
                     <button onClick={clearData} className='p-4 bg-emerald-700 rounded-md shadow-lg hover:bg-red-200'>clear table</button>}
             </main>
             <Footer input={input} />

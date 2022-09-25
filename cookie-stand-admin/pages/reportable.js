@@ -29,7 +29,7 @@ export default function ReporTable(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {props.newData()?.map((item, idx) => {
+                    {props.input.map((item, idx) => {
                         return (
                             <tr key={idx}>
                                 <td className={`${tdStyles}`} >{item.location}</td>
@@ -46,8 +46,8 @@ export default function ReporTable(props) {
                 <tfoot>
                     <tr>
                         <td className={`${tfStyles}`}>Totals</td>
-                        {findTotals(props.newData()).map((item, idx) => <td className={`${tfStyles}`} key={idx}>{item}</td>)}
-                        <td className={`${tfStyles}`}>{findTotals(props.newData()).reduce((item1, item2) => item1 + item2, 0)}</td>
+                        {findTotals(props.input).map((item, idx) => <td className={`${tfStyles}`} key={idx}>{item}</td>)}
+                        <td className={`${tfStyles}`}>{findTotals(props.input).reduce((item1, item2) => item1 + item2, 0)}</td>
                     </tr>
                 </tfoot>
             </table >
