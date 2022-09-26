@@ -145,7 +145,8 @@ const OverviewModal = (props) => {
         <Modal
             isOpen={props.modalIsOpen}
             style={customStyles}
-            ariaHideApp={false}>
+            ariaHideApp={false}
+        >
             <h1 className='text-gray-600 text-2xl'>Cookie Stands Sales Summary</h1>
             <h1 className='my-3 flex'>Number of Locations: <h1 className='mx-2 text-red-600'>{numLoc}</h1> </h1>
             <h1 className='my-3 flex'>Best Performing Store: <h1 className='mx-2 text-red-600'>{bestStoreSales}</h1></h1>
@@ -157,7 +158,7 @@ const OverviewModal = (props) => {
             <button onClick={() => {
                 props.setIsModalOpen(false)
             }}
-                className="px-10 py-1 mx-auto bg-emerald-600 rounded shadow mg"
+                className="px-10 py-3 mx-auto bg-emerald-600 rounded shadow hover:bg-red-200"
             >close</button>
         </Modal>
     )
