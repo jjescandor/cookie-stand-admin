@@ -8,7 +8,7 @@
 
 #### Run
 - To run, type "npm install" in ther terminal
-- then , type npm run dev
+- Then , type "npm run dev"
 
 ### Feature Tasks and Requirements
 - The specs for lab are screen shots Cookie Stand Admin Version 2 and Cookie Stand Admin No Stands pages/Index.js should return top level component CookieStandAdmin
