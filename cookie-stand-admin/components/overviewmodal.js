@@ -21,11 +21,11 @@ const OverviewModal = (props) => {
     const findHourlyTotals = (salesData) => {
         const hourlyTotal = []
         for (let j = 0; j < salesData.length; j++) {
-            for (let k = 0; k < salesData[j].sales.length; k++) {
+            for (let k = 0; k < salesData[j].hourly_sales.length; k++) {
                 if (!hourlyTotal[k]) {
-                    hourlyTotal[k] = salesData[j].sales[k];
+                    hourlyTotal[k] = salesData[j].hourly_sales[k];
                 } else {
-                    hourlyTotal[k] += salesData[j].sales[k];
+                    hourlyTotal[k] += salesData[j].hourly_sales[k];
                 }
             }
         }
@@ -36,7 +36,7 @@ const OverviewModal = (props) => {
         const storeSales = []
         for (let store of salesData) {
             let sum = 0;
-            for (let sales of store.sales) {
+            for (let sales of store.hourly_sales) {
                 sum += sales;
             }
             storeSales.push(sum)
@@ -63,7 +63,7 @@ const OverviewModal = (props) => {
     const findWorstStore = (salesData) => {
         const storeSales = findStoreSales(salesData)
         const idx = storeSales.indexOf(Math.min(...storeSales))
-        return salesData[idx]?.location;
+        return salesData[idx].location;
     }
 
     const findBestHour = (salesData) => {
@@ -89,7 +89,7 @@ const OverviewModal = (props) => {
         return hourlySales
     }
 
-    const numLoc = props.input.length;
+    const numLoc = props.input?.length;
 
     const totalSales = findTotalSales(props.input);
 
