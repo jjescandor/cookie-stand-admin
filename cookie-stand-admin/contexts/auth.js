@@ -3,7 +3,6 @@ import { createContext, useContext, useState } from "react";
 import axios from "axios";
 import jwt from "jsonwebtoken";
 
-
 const AuthContext = createContext();
 
 export function useAuth() {
@@ -12,9 +11,7 @@ export function useAuth() {
     if (!auth) {
         throw new Error("You forgot to set up AuthProvider!");
     }
-
     return auth;
-
 }
 
 export function AuthProvider(props) {
@@ -28,7 +25,7 @@ export function AuthProvider(props) {
 
     async function login(username, password) {
 
-        const loginUrl = "http://44.202.123.64/api/token/";
+        const loginUrl = process.env.NEXT_PUBLIC_API_URL_TOKEN;
 
         const response = await axios.post(loginUrl, { username, password });
 
