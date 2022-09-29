@@ -19,7 +19,7 @@ const Home = () => {
             </Head>
             <Header />
             <h1 className="m-auto">Future products goes here</h1>
-            {/* <div className="flex flex-row justify-around items-center h-5/6 m-auto w-screen">
+            <div className="flex flex-row justify-around items-center h-5/6 m-auto w-screen">
                 {imgs.map((img, idx) =>
 
                 (
@@ -28,7 +28,7 @@ const Home = () => {
                     </div>
                 )
                 )}
-            </div> */}
+            </div>
             <Footer />
         </div>
     )
