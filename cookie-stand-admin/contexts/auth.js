@@ -27,6 +27,8 @@ export function AuthProvider(props) {
 
         const loginUrl = process.env.NEXT_PUBLIC_API_URL_TOKEN;
 
+        console.log("check", loginUrl)
+
         const response = await axios.post(loginUrl, { username, password });
 
         const decodedAccess = jwt.decode(response.data.access);
