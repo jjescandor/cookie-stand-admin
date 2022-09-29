@@ -1,4 +1,3 @@
-import styles from '../styles/Home.module.css';
 const tdStyles = "my-10  mx-auto p-3 bg-emerald-400 text-gray-500"
 const thStyles = "my-10  mx-auto p-3 bg-emerald-500 text-gray-700"
 const tfStyles = "my-10  mx-auto p-3 bg-emerald-500 text-red-300"
@@ -9,11 +8,11 @@ export const ReporTable = (props) => {
     const findTotals = (salesData) => {
         const hourlyTotal = []
         for (let j = 0; j < salesData.length; j++) {
-            for (let k = 0; k < salesData[j].sales.length; k++) {
+            for (let k = 0; k < salesData[j].hourly_sales.length; k++) {
                 if (!hourlyTotal[k]) {
-                    hourlyTotal[k] = salesData[j].sales[k];
+                    hourlyTotal[k] = salesData[j].hourly_sales[k];
                 } else {
-                    hourlyTotal[k] += salesData[j].sales[k];
+                    hourlyTotal[k] += salesData[j].hourly_sales[k];
                 }
             }
         }
@@ -34,7 +33,8 @@ export const ReporTable = (props) => {
                             <tr key={idx} className={`${tdStyles}`}>
                                 <td className='flex items-center content-center'>
                                     <button onClick={(() => {
-                                        props.removeLoc(idx)
+                                        console.log(item.id)
+                                        props.deleteStand(item)
                                     }
                                     )} className='hover:text-red-200 mx-auto my-3'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 m-auto">
@@ -47,11 +47,11 @@ export const ReporTable = (props) => {
                                     {item.location}
                                 </td>
                                 {
-                                    item.sales.map((item, idx) => {
+                                    item?.hourly_sales.map((item, idx) => {
                                         return (<td key={idx} className={`${tdStyles} `}>{item}</td>)
                                     })
                                 }
-                                <td className={`${tdStyles} `}>{item.sales.reduce((item1, item2) => item1 + item2, 0)}</td>
+                                <td className={`${tdStyles} `}>{item?.hourly_sales.reduce((item1, item2) => item1 + item2, 0)}</td>
                             </tr>
                         )
                     })}
