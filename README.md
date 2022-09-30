@@ -6,9 +6,10 @@
 #### Description
  - This is project is about recreating the Cookie Stand Admin app using Next.js and style using Tailwind CSS.
 
-#### Run
-- To run, type "npm install" in ther terminal
-- Then , type "npm run dev"
+#### Deplyed website
+- [Cookie Stand Admin](https://cookiestandadmin.netlify.app/)
+- username : admin
+- password : admin
 
 ### Feature Tasks and Requirements
 - All features from versions 1 an 2 should be complete.
