@@ -39,7 +39,7 @@ export default function useResource() {
     async function deleteResource(info) {
 
         try {
-            const url = apiUrl + info.id;
+            const url = `${apiUrl}${info.id}/`;
             console.log("delete")
             console.log("config", JSON.stringify(config()));
             const res = await axios.delete(url, config());
@@ -62,8 +62,8 @@ export default function useResource() {
 
         return {
             headers: {
-                'Authorization': 'Bearer ' + tokens.access
-            }
+                'Authorization': 'Bearer ' + tokens.access,
+            },
         };
     }
 
