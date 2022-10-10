@@ -9,7 +9,7 @@ module.exports = nextConfig
 //   async rewrites() {
 //     return [
 //       {
-//         source: '/api/:path*',
+//         source: '/api/* http://44.202.123.64/',
 //         destination: 'http://localhost:4000/:path*'
 //       }
 //     ]

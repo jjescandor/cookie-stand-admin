@@ -7,7 +7,8 @@
  - This is project is about recreating the Cookie Stand Admin app using Next.js and style using Tailwind CSS.
 
 #### Deplyed website
-- [Cookie Stand Admin](https://cookiestandadmin.netlify.app/)
+- [Cookie Stand Admin Netlify](https://cookiestandadmin.netlify.app/)
+- [Cookie Stand Admin Vercel](https://cookie-stand-admin-nljqgw4yc-jjescandor.vercel.app/)
 - username : admin
 - password : admin
 
