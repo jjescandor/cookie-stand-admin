@@ -25,7 +25,7 @@ export function AuthProvider(props) {
 
     async function login(username, password) {
 
-        const loginUrl = "/api/token/";
+        const loginUrl = `/api/token/`;
 
         console.log("check", loginUrl)
 
