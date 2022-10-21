@@ -1,7 +1,7 @@
 import axios from 'axios';
 import useSWR from 'swr';
 
-export const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+export const apiUrl = "/api/v1/cookie_stands/";
 import { useAuth } from '../contexts/auth';
 
 export default function useResource() {
