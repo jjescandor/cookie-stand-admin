@@ -25,7 +25,7 @@ export function AuthProvider(props) {
 
     async function login(username, password) {
 
-        const loginUrl = NEXT_PUBLIC_API_URL_TOKEN;
+        const loginUrl = process.env.NEXT_PUBLIC_API_URL_TOKEN;
 
         console.log("check", loginUrl)
 
