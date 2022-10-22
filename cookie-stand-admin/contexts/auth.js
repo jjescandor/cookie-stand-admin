@@ -3,7 +3,6 @@ import { createContext, useContext, useState } from "react";
 import axios from "axios";
 import jwt from "jsonwebtoken";
 const AuthContext = createContext();
-//test
 export function useAuth() {
 
     const auth = useContext(AuthContext);
